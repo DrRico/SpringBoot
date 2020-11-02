@@ -5,7 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import javax.servlet.http.HttpSession;
 
 /**
@@ -27,6 +26,11 @@ public class LoginController {
         }
     }
 
+    @RequestMapping("/user/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/index.html";
+    }
 
 
 
